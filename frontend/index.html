@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core-Trust Digital Banking | Web Portal</title>
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="notification-container"></div>
+    <div id="modal-container"></div>
+    <div id="app">
+        <!-- Login Screen -->
+        <section id="login-screen" class="view active">
+            <div class="login-card glass">
+                <div class="login-header">
+                    <h1>CORE-TRUST</h1>
+                    <p>DIGITAL BANKING SYSTEM</p>
+                </div>
+                
+                <div class="toggle-group">
+                    <button class="toggle-btn active" data-mode="customer">Customer</button>
+                    <button class="toggle-btn" data-mode="admin">Admin</button>
+                </div>
+
+                <div class="form-group">
+                    <label>User ID</label>
+                    <input type="text" id="login-uid" placeholder="Enter ID">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-pwd" placeholder="Enter Password">
+                </div>
+
+                <button id="login-btn" class="primary-btn">SIGN IN</button>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Layout -->
+        <section id="main-dashboard" class="view">
+            <aside id="sidebar" class="glass">
+                <div class="sidebar-logo">
+                    <h2>CORE-TRUST</h2>
+                </div>
+                <nav id="nav-menu">
+                    <!-- Dynamic Nav Items Here -->
+                </nav>
+            </aside>
+
+            <main id="content-area">
+                <header class="top-bar">
+                    <div id="welcome-msg">
+                        <h1 id="user-greeting">Welcome back, User</h1>
+                        <p id="sub-greeting">Here is what's happening at Core-Trust today.</p>
+                    </div>
+                </header>
+                
+                <div id="dynamic-content">
+                    <!-- Dashboard Views Here -->
+                </div>
+            </main>
+
+            <!-- Mobile Bottom Nav -->
+            <nav id="bottom-nav" class="glass mobile-only">
+                <!-- Dynamic Mobile Nav Items Here -->
+            </nav>
+        </section>
+    </div>
+
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
