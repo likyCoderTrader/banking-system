@@ -58,19 +58,22 @@ class SupabaseService:
     # ADMIN OPERATIONS
     # =======================================================================
 
-    def verify_admin(self, uid: str) -> Optional[Dict[str, Any]]:
+    def verify_admin(self, identifier: str) -> Optional[Dict[str, Any]]:
         """
-        Fetch an admin record by their ID.
+        Fetch an admin record by their ID or email.
 
         Args:
-            uid (str): The admin's login ID.
+            identifier (str): The admin's login ID or email.
 
         Returns:
             Dict with admin data if found, None otherwise.
         """
         if self.client is not None:
             try:
-                response = self.client.table("admins").select("*").eq("id", uid).execute()
+                if '@' in identifier:
+                    response = self.client.table("admins").select("*").eq("email", identifier).execute()
+                else:
+                    response = self.client.table("admins").select("*").eq("id", identifier).execute()
                 return response.data[0] if response.data else None
             except Exception:
                 return None
@@ -122,23 +125,105 @@ class SupabaseService:
                 return None
         return None
 
+    def get_all_customers(self) -> List[Dict[str, Any]]:
+        """
+        Get all customers for admin analytics and reporting.
+
+        Returns:
+            List of all customer records.
+        """
+        if self.client is not None:
+            try:
+                response = self.client.table("customers").select("*").execute()
+                return response.data if response.data else []
+            except Exception:
+                return []
+        return []
+
+    def get_customer_count(self) -> int:
+        """
+        Get total number of customers.
+
+        Returns:
+            Count of customers.
+        """
+        if self.client is not None:
+            try:
+                response = self.client.table("customers").select("*", count='exact').execute()
+                return len(response.data) if response.data else 0
+            except Exception:
+                return 0
+        return 0
+
+    def get_total_deposits(self) -> float:
+        """
+        Get sum of all deposits across all accounts.
+
+        Returns:
+            Total deposits amount.
+        """
+        if self.client is not None:
+            try:
+                response = self.client.table("customers").select("balance").execute()
+                if response.data:
+                    return sum(float(c.get("balance", 0)) for c in response.data if c.get("balance", 0) > 0)
+                return 0.0
+            except Exception:
+                return 0.0
+        return 0.0
+
     # =======================================================================
     # CUSTOMER OPERATIONS
     # =======================================================================
 
-    def verify_customer(self, uid: str) -> Optional[Dict[str, Any]]:
+    def update_customer_status(self, cid: str, status: str) -> bool:
         """
-        Fetch a customer record by their ID (used during login).
+        Update a customer's status (e.g., 'active', 'pending', 'suspended').
 
         Args:
-            uid (str): The customer's account ID.
+            cid (str): Customer ID.
+            status (str): The new status to apply.
+
+        Returns:
+            True on success, False on failure.
+        """
+        if self.client is not None:
+            try:
+                self.client.table("customers").update({"status": status}).eq("id", cid).execute()
+                return True
+            except Exception as e:
+                print(f"[ERROR] update_customer_status failed: {e}")
+                return False
+        return False
+
+    def verify_customer(self, identifier: str) -> Optional[Dict[str, Any]]:
+        """
+        Fetch a customer record by their ID or email (used during login).
+
+        Args:
+            identifier (str): The customer's account ID or email.
 
         Returns:
             Dict with customer data if found, None otherwise.
         """
         if self.client is not None:
             try:
-                response = self.client.table("customers").select("*").eq("id", uid).execute()
+                if '@' in identifier:
+                    response = self.client.table("customers").select("*").eq("email", identifier).execute()
+                else:
+                    response = self.client.table("customers").select("*").eq("id", identifier).execute()
+                return response.data[0] if response.data else None
+            except Exception:
+                return None
+        return None
+
+    def find_by_google_id(self, google_id: str) -> Optional[Dict[str, Any]]:
+        """
+        Fetch a customer record by their Google ID.
+        """
+        if self.client is not None:
+            try:
+                response = self.client.table("customers").select("*").eq("google_id", google_id).execute()
                 return response.data[0] if response.data else None
             except Exception:
                 return None
@@ -276,3 +361,75 @@ class SupabaseService:
                 print(f"[ERROR] transfer_funds failed: {e}")
                 return False
         return False
+
+    # =======================================================================
+    # ADMIN — REAL-WORLD OPERATIONS
+    # =======================================================================
+
+    def list_all_customers(self) -> List[Dict[str, Any]]:
+        """
+        Return all customer records (without passwords) for admin listing.
+
+        Returns:
+            List of customer dicts, empty list on error.
+        """
+        if self.client is not None:
+            try:
+                response = (
+                    self.client.table("customers")
+                    .select("id, name, address, phone, balance, created_at")
+                    .order("created_at", desc=True)
+                    .execute()
+                )
+                return response.data if response.data else []
+            except Exception as e:
+                print(f"[ERROR] list_all_customers failed: {e}")
+                return []
+        return []
+
+    def delete_customer(self, cid: str) -> bool:
+        """
+        Delete a customer and all their transaction records.
+
+        Args:
+            cid (str): Customer account ID to delete.
+
+        Returns:
+            True on success, False on failure.
+        """
+        if self.client is not None:
+            try:
+                # Delete transactions first (referential integrity)
+                self.client.table("transactions").delete().eq("customer_id", cid).execute()
+                # Delete the customer record
+                self.client.table("customers").delete().eq("id", cid).execute()
+                return True
+            except Exception as e:
+                print(f"[ERROR] delete_customer failed: {e}")
+                return False
+        return False
+
+    def get_all_transactions(self, limit: int = 50) -> List[Dict[str, Any]]:
+        """
+        Return the most recent transactions across ALL customers.
+
+        Args:
+            limit (int): Max number of records to return.
+
+        Returns:
+            List of transaction dicts.
+        """
+        if self.client is not None:
+            try:
+                response = (
+                    self.client.table("transactions")
+                    .select("*")
+                    .order("created_at", desc=True)
+                    .limit(limit)
+                    .execute()
+                )
+                return response.data if response.data else []
+            except Exception as e:
+                print(f"[ERROR] get_all_transactions failed: {e}")
+                return []
+        return []

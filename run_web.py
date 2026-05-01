@@ -89,20 +89,32 @@ def run_all():
     time.sleep(2)
 
     # -----------------------------------------------------------------------
-    # Step 2: Start the Frontend Web Server
+    # Step 2: Start the Frontend Web Server (with MIME type fix for Windows)
     # -----------------------------------------------------------------------
     print("[INFO] Launching Web Portal at http://localhost:8000...", flush=True)
+    custom_server_script = """
+import http.server
+import socketserver
+import mimetypes
+
+mimetypes.add_type('application/javascript', '.js')
+mimetypes.add_type('text/css', '.css')
+
+Handler = http.server.SimpleHTTPRequestHandler
+with socketserver.TCPServer(("", 8000), Handler) as httpd:
+    httpd.serve_forever()
+"""
     web_server = subprocess.Popen(
-        [sys.executable, "-m", "http.server", "8000"],
+        [sys.executable, "-c", custom_server_script],
         cwd=FRONTEND_DIR   # Serve files from the frontend/ directory
     )
 
     # -----------------------------------------------------------------------
-    # Step 3: Open the Browser
+    # Step 3: Open the Browser to Landing Page
     # -----------------------------------------------------------------------
     time.sleep(1.5)   # Give http.server a moment before opening the browser
     print("[INFO] Opening browser...", flush=True)
-    webbrowser.open("http://localhost:8000")
+    webbrowser.open("http://localhost:8000/landing.html")
 
     # -----------------------------------------------------------------------
     # Live Status

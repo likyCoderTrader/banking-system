@@ -75,6 +75,7 @@ def create_customer_profile(db_service, form_data: dict) -> tuple:
     pwd = str(form_data["password"]).encode('utf-8')
     hashed = bcrypt.hashpw(pwd, bcrypt.gensalt()).decode('utf-8')
     form_data["password"] = hashed
+    form_data["status"] = "active"
 
     # Step 4: Persist to the database
     if db_service.create_customer(form_data):

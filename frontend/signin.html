@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Core-Trust | Internet Banking Portal</title>
+    <meta name="description" content="Sign in to your Core-Trust secure online banking portal. Access your accounts, make transfers, and manage your finances.">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="auth.css">
+    <script>
+        function togglePwd(inputId, btn) {
+            const inp = document.getElementById(inputId);
+            if (!inp) return;
+            const icon = btn.querySelector('i');
+            if (!icon) return;
+            if (inp.type === 'password') {
+                inp.type = 'text';
+                icon.className = 'fas fa-eye';
+            } else {
+                inp.type = 'password';
+                icon.className = 'fas fa-eye-slash';
+            }
+        }
+    </script>
+</head>
+<body class="auth-body">
+    <div id="notification-container"></div>
+    <div id="modal-container"></div>
+
+    <!-- Secure Connection Loader -->
+    <div id="secure-loader" class="secure-loader" style="display: none;">
+        <div class="loader-content">
+            <div class="loader-logo"><i class="fas fa-shield-halved"></i> Core<span class="accent">Trust</span></div>
+            <div class="spinner"></div>
+            <div id="loader-text" class="loader-text">Initializing secure environment...</div>
+            <div class="loader-progress-container">
+                <div id="loader-progress-bar" class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session Timeout Warning -->
+    <div id="session-timeout-bar" class="session-timeout-bar hidden" style="display: none;">
+        <i class="fas fa-clock"></i>
+        <span>Your session will expire in <strong id="timeout-countdown">60</strong> seconds due to inactivity.</span>
+        <button onclick="resetSessionTimer()" class="timeout-stay-btn">Stay Logged In</button>
+    </div>
+
+    <div id="app">
+        <!-- Login Screen -->
+        <section id="login-screen" class="view active">
+            <div class="auth-split-container">
+                <!-- Left: Hero Image Panel -->
+                <div class="auth-hero-panel">
+                    <img src="assets/login-hero.png" alt="Core-Trust Banking" class="auth-hero-img" id="auth-hero-img">
+                    <div class="auth-hero-overlay">
+                        <div class="auth-hero-brand">
+                            <div class="auth-hero-logo">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <span>Core<span class="accent">Trust</span></span>
+                        </div>
+                        <div class="auth-hero-slider-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="auth-hero-text">
+                            <h2>Banking That<br>Works For You</h2>
+                            <p>Secure digital banking with instant transfers, real-time tracking, and 256-bit encryption.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Auth Form Panel -->
+                <div class="auth-form-panel">
+                    <div class="auth-form-inner">
+
+                        <!-- Sign In Form -->
+                        <div id="signin-form" class="auth-form-view active">
+                            <h1 class="auth-title" style="margin-bottom: 1.2rem;">Welcome Back</h1>
+
+                            <div class="auth-field" style="margin-bottom: 1.2rem;">
+                                <input type="text" id="login-uid" placeholder="Email or Account ID" autocomplete="username" style="font-size:1.05rem;" required>
+                            </div>
+                            <div class="auth-field" style="margin-bottom: 1.2rem;">
+                                <input type="password" id="login-pwd" placeholder="Password" autocomplete="current-password" style="font-size:1.05rem;" required>
+                                <button type="button" class="pwd-toggle" onclick="togglePwd('login-pwd', this)">
+                                    <i class="fas fa-eye-slash"></i>
+                                </button>
+                            </div>
+
+                            <div class="auth-options" style="margin-bottom: 1.5rem;">
+                                <label class="auth-checkbox">
+                                    <input type="checkbox" id="login-remember"> <span>Remember me</span>
+                                </label>
+                                <a href="#" class="auth-link" onclick="showForgotPassword()">Forgot Password?</a>
+                            </div>
+
+                            <button id="login-btn" class="auth-submit-btn" onclick="handleLogin()" style="margin-bottom: 1.5rem; font-size:1.08rem;">
+                                Sign In to My Account
+                            </button>
+
+                            <!-- Biometric Login Button -->
+                            <button class="btn-outline auth-biometric-btn" onclick="handleBiometricLogin()" style="width: 100%; margin-bottom: 1.5rem; padding: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size:1rem;">
+                                <i class="fas fa-fingerprint" style="font-size: 1.2rem;"></i>
+                                Sign in with Biometrics
+                            </button>
+
+                            <div class="auth-divider">
+                                <span>OR</span>
+                            </div>
+
+                            <div class="auth-social-row">
+                                <button type="button" class="auth-social-btn" onclick="continueWithGoogle()">
+                                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+                                </button>
+                                <button type="button" class="auth-social-btn">
+                                    <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
+                                </button>
+                                <button type="button" class="auth-social-btn">
+                                    <i class="fab fa-apple" style="color: #ffffff;"></i>
+                                </button>
+                            </div>
+
+                            <div class="auth-switch-link">
+                                Don't have an account?
+                                <a href="signup.html">Create one now</a>
+                            </div>
+                        </div>
+
+                        <!-- OTP Form -->
+                        <div id="otp-form" class="auth-form-view" style="display: none;">
+                            <div class="security-icon-header">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <h1 class="auth-title">Verify Your Identity</h1>
+                            <p class="auth-subtitle">A 6-digit verification code has been sent to your registered device. Enter it below to proceed.</p>
+
+                            <div class="auth-field" style="margin-top: 2rem;">
+                                <input type="text" id="login-otp" placeholder="000000" maxlength="6" style="text-align: center; letter-spacing: 12px; font-size: 1.8rem; font-weight: 700;" required>
+                            </div>
+
+                            <button id="verify-otp-btn" class="auth-submit-btn" onclick="handleVerifyOtp()" style="margin-top: 1rem;">
+                                VERIFY & PROCEED
+                            </button>
+
+                            <div class="auth-switch-link" style="margin-top: 1.5rem;">
+                                Didn't receive the code? <a href="#" onclick="resendOtp()">Resend OTP</a>
+                            </div>
+                            <div class="auth-switch-link">
+                                <a href="#" onclick="showSignIn()">Back to Sign In</a>
+                            </div>
+                        </div>
+
+                        <!-- Forgot Password Form -->
+                        <div id="forgot-password-form" class="auth-form-view" style="display: none;">
+                            <div class="security-icon-header">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h1 class="auth-title">Reset Password</h1>
+                            <p class="auth-subtitle">Enter your registered email or account ID to receive an OTP.</p>
+
+                            <div class="auth-field">
+                                <input type="text" id="reset-uid" placeholder="Email or Account ID" required>
+                            </div>
+
+                            <button id="request-reset-btn" class="auth-submit-btn" onclick="handlePasswordResetRequest()">
+                                Send Reset OTP
+                            </button>
+
+                            <div class="auth-switch-link" style="margin-top: 20px;">
+                                Remember your password? <a href="#" onclick="showSignIn()">Back to Sign In</a>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="auth-footer">
+                            <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Layout -->
+        <section id="main-dashboard" class="view">
+            <aside id="sidebar" class="glass">
+                <div class="sidebar-logo"><h2>CORE-TRUST</h2></div>
+                <nav id="nav-menu"></nav>
+            </aside>
+            <main id="content-area">
+                <header class="top-bar">
+                    <div id="welcome-msg">
+                        <h1 id="user-greeting">Welcome back, User</h1>
+                        <p id="sub-greeting">Here's your account overview.</p>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="top-bar-time" id="live-clock"></div>
+                    </div>
+                </header>
+                <div id="dynamic-content"></div>
+            </main>
+            <nav id="bottom-nav" class="glass mobile-only"></nav>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js?v=3.0"></script>
+</body>
+</html>

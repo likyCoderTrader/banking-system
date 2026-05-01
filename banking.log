@@ -1,0 +1,313 @@
+2026-04-28 22:10:41,725 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 22:10:41,725 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 22:13:55,249 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 22:13:55,249 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 22:17:01,785 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 22:17:01,786 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 22:20:06,972 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 22:20:06,972 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 22:33:14,384 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 22:33:14,385 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 23:06:02,595 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 23:06:02,597 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 23:09:06,832 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 23:09:06,839 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 23:10:09,945 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:10:09] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-28 23:10:10,080 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-28 23:10:21,855 - __main__ - WARNING - Failed login attempt: cust001, ip=127.0.0.1
+2026-04-28 23:10:21,860 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:10:21] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2026-04-28 23:23:32,230 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-28 23:23:32,233 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-28 23:25:58,340 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:25:58] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-28 23:25:58,386 - __main__ - WARNING - Invalid ID format attempted: doctor@clinic.com
+2026-04-28 23:25:58,388 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:25:58] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2026-04-28 23:27:26,695 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:27:26] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-28 23:27:26,963 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-28 23:27:29,868 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-28 23:27:30,191 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:27:30,231 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-28 23:27:30,233 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:27:30] "POST /api/login HTTP/1.1" 200 -
+2026-04-28 23:27:30,625 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:27:30,886 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:27:30,887 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-28 23:27:30,892 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:27:30] "POST /api/login HTTP/1.1" 200 -
+2026-04-28 23:27:30,897 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:27:30] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-28 23:27:31,600 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:27:31,604 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:27:31] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-28 23:29:05,190 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:29:05] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-28 23:29:05,453 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-28 23:29:09,094 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-28 23:29:10,688 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:29:10,691 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-28 23:29:10,691 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:29:10,694 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:29:10] "POST /api/login HTTP/1.1" 200 -
+2026-04-28 23:29:10,697 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-28 23:29:10,699 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:29:10] "POST /api/login HTTP/1.1" 200 -
+2026-04-28 23:29:11,238 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:29:11,241 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:29:11] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-28 23:29:11,519 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-28 23:29:11,520 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2026 23:29:11] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:12:28,605 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 00:12:28,607 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 00:12:48,105 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:12:48] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:12:48,323 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:12:56,083 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:12:56,094 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:12:56,096 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:12:56] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:12:56,321 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:12:56,321 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:12:56] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:23:31,809 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:23:31] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:23:32,061 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:23:33,407 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:23:33,409 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:23:33,410 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:23:33] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:23:33,650 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:23:33,654 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:23:33] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:26:38,461 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:26:38] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:26:38,727 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:26:39,554 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:26:39,555 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:26:39,556 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:26:39] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:26:40,101 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:26:40,103 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:26:40] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:26:43,962 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:26:43,965 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:26:43] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:26:47,934 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/transactions?select=%2A&customer_id=eq.cust001&order=created_at.desc "HTTP/2 200 OK"
+2026-04-29 00:26:47,940 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:26:47] "GET /api/customer/history?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:34:05,147 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:34:05] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:34:05,412 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:34:06,277 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:34:06,279 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:34:06,279 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:34:06] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:34:06,502 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:34:06,506 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:34:06] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:41:02,935 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:02] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:41:03,189 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:41:04,367 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:41:04,372 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:41:04,374 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:04] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:41:04,594 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:41:04,598 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:04] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:41:09,656 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:09] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:41:09,903 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:41:10,173 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:41:10,177 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:41:10,179 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:10] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:41:10,391 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:41:10,393 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:10] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 00:41:45,151 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:41:45,155 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:45] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:41:47,807 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:41:47,808 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:47] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:41:50,134 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:41:50,136 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:41:50] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:48:26,458 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:48:26,459 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:48:26] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:49:10,273 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:49:10,277 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:49:10] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:57:42,681 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:57:42,686 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:42] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:57:50,274 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:57:50,276 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:50] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:57:51,991 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:57:51,991 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:51] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:57:53,021 - server - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-04-29 00:57:53,023 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:53] "[35m[1mOPTIONS /api/register HTTP/1.1[0m" 500 -
+2026-04-29 00:57:57,153 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:57] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 00:57:57,404 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 00:57:58,207 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:57:58,210 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 00:57:58,211 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:58] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 00:57:58,454 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 00:57:58,455 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 00:57:58] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:00:26,599 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:00:26] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 01:00:26,863 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 01:00:27,584 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:00:27,587 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 01:00:27,587 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:00:27] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 01:00:27,815 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:00:27,818 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:00:27] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:09:57,092 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:09:57] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 01:09:57,348 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 01:09:58,177 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:09:58,179 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 01:09:58,179 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:09:58] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 01:09:58,419 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:09:58,421 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:09:58] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:14:57,447 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:14:57] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 01:14:57,714 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 01:14:58,987 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:14:58,988 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 01:14:58,989 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:14:58] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 01:14:59,218 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:14:59,219 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:14:59] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:35:29,966 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 01:35:30,159 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2026-04-29 01:35:30,161 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 01:35:30,170 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 01:35:35,213 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 01:35:35,290 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 01:35:35,302 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 01:35:38,510 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:35:38] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 01:35:38,776 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 01:35:41,273 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:35:41,274 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 01:35:41,274 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:35:41] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 01:37:00,327 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:37:00] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 01:37:00,595 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 01:37:01,011 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:37:01,014 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 01:37:01,014 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:37:01] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 01:37:01,298 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/accounts?select=%2A&customer_id=eq.cust001 "HTTP/2 404 Not Found"
+2026-04-29 01:37:01,299 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:37:01] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:37:06,171 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/transactions?select=%2A&customer_id=eq.cust001&order=created_at.desc "HTTP/2 200 OK"
+2026-04-29 01:37:06,175 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:37:06] "GET /api/customer/history?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:37:06,973 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/accounts?select=%2A&customer_id=eq.cust001 "HTTP/2 404 Not Found"
+2026-04-29 01:37:06,979 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:37:06] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:37:20,826 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\banking_logic.py', reloading
+2026-04-29 01:37:21,164 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 01:37:24,708 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 01:37:24,802 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 01:37:24,816 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 01:40:56,777 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:40:56] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 01:40:57,039 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 01:40:58,689 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:40:58,695 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 01:40:58,696 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:40:58] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 01:40:58,929 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 01:40:58,931 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 01:40:58] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 01:50:30,672 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\server.py', reloading
+2026-04-29 01:50:30,945 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 01:50:33,545 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 01:50:33,607 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 01:50:33,616 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 13:31:27,415 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 13:31:27,742 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.10.234:5000
+2026-04-29 13:31:27,742 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 13:31:27,751 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 13:31:35,809 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 13:31:36,002 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 13:31:36,054 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 13:31:49,673 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 13:31:49] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 13:31:49,936 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 13:31:53,504 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 13:31:53,519 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 13:31:53,519 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 13:31:53] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 13:31:53,861 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 13:31:53,865 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 13:31:53] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 17:11:49,814 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 17:11:50,003 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2026-04-29 17:11:50,003 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 17:11:50,008 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 17:11:54,633 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 17:11:54,722 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 17:11:54,737 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 17:21:27,671 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\supabase_client.py', reloading
+2026-04-29 17:21:28,287 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 17:21:32,670 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 17:21:32,749 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 17:21:32,761 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 17:21:56,936 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\server.py', reloading
+2026-04-29 17:21:57,179 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 17:21:59,581 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 17:21:59,649 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 17:21:59,659 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-29 17:51:40,612 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 17:51:40] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 17:51:40,825 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 17:51:44,167 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 17:51:44,192 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 17:51:44,194 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 17:51:44] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 17:51:44,439 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 17:51:44,441 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 17:51:44] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 17:51:48,786 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 17:51:48,788 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 17:51:48] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 17:51:49,574 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/transactions?select=%2A&customer_id=eq.cust001&order=created_at.desc "HTTP/2 200 OK"
+2026-04-29 17:51:49,577 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 17:51:49] "GET /api/customer/history?id=cust001 HTTP/1.1" 200 -
+2026-04-29 18:24:39,577 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:39] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 18:24:39,824 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 18:24:44,900 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:44] "OPTIONS /api/login HTTP/1.1" 200 -
+2026-04-29 18:24:45,211 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 18:24:47,642 - __main__ - INFO - Login attempt: mode=customer, id=cust001, ip=127.0.0.1
+2026-04-29 18:24:49,900 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 18:24:49,904 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 18:24:49,910 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 18:24:49,928 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 18:24:49,928 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 18:24:49,929 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:49] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 18:24:49,931 - __main__ - INFO - Successful login (legacy): cust001, ip=127.0.0.1
+2026-04-29 18:24:49,931 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:49] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 18:24:49,933 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:49] "POST /api/login HTTP/1.1" 200 -
+2026-04-29 18:24:50,513 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 18:24:50,514 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:50] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 18:24:50,744 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 18:24:50,748 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:50] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 18:24:51,292 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=balance&id=eq.cust001 "HTTP/2 200 OK"
+2026-04-29 18:24:51,294 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2026 18:24:51] "GET /api/customer/balance?id=cust001 HTTP/1.1" 200 -
+2026-04-29 18:47:26,857 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 18:47:27,223 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2026-04-29 18:47:27,225 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 18:47:27,231 - werkzeug - INFO -  * Restarting with stat
+2026-04-29 18:47:33,621 - __main__ - INFO - Starting development server on port 5000...
+2026-04-29 18:47:33,769 - werkzeug - WARNING -  * Debugger is active!
+2026-04-29 18:47:33,803 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-30 00:58:38,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\server.py', reloading
+2026-04-30 00:58:39,017 - werkzeug - INFO -  * Restarting with stat
+2026-04-30 00:58:44,882 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 00:58:44,992 - werkzeug - WARNING -  * Debugger is active!
+2026-04-30 00:58:45,012 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-30 01:04:29,662 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\server.py', reloading
+2026-04-30 01:04:30,750 - werkzeug - INFO -  * Restarting with stat
+2026-04-30 01:04:39,387 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 01:04:39,481 - werkzeug - WARNING -  * Debugger is active!
+2026-04-30 01:04:39,506 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-30 01:05:06,692 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\server.py', reloading
+2026-04-30 01:05:07,239 - werkzeug - INFO -  * Restarting with stat
+2026-04-30 01:05:16,024 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 01:05:16,151 - werkzeug - WARNING -  * Debugger is active!
+2026-04-30 01:05:16,224 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-30 01:05:29,784 - werkzeug - INFO -  * Detected change in 'C:\\Users\\likyCoder Developer\\OneDrive\\Desktop\\bankSystem\\backend\\server.py', reloading
+2026-04-30 01:05:30,160 - werkzeug - INFO -  * Restarting with stat
+2026-04-30 01:05:36,291 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 01:05:36,393 - werkzeug - WARNING -  * Debugger is active!
+2026-04-30 01:05:36,419 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-30 01:08:23,222 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 01:08:23,433 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.11:5000
+2026-04-30 01:08:23,433 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-30 01:08:23,439 - werkzeug - INFO -  * Restarting with stat
+2026-04-30 01:08:31,927 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 01:08:32,108 - werkzeug - WARNING -  * Debugger is active!
+2026-04-30 01:08:32,161 - werkzeug - INFO -  * Debugger PIN: 145-204-957
+2026-04-30 11:51:18,997 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 11:51:19,264 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.10.234:5000
+2026-04-30 11:51:19,264 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-30 11:51:19,269 - werkzeug - INFO -  * Restarting with stat
+2026-04-30 11:51:25,264 - __main__ - INFO - Starting development server on port 5000...
+2026-04-30 11:51:25,441 - werkzeug - WARNING -  * Debugger is active!
+2026-04-30 11:51:25,505 - werkzeug - INFO -  * Debugger PIN: 145-204-957

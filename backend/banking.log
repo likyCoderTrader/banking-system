@@ -1,0 +1,2 @@
+2026-04-29 00:55:44,220 - httpx - INFO - HTTP Request: GET https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers?select=%2A "HTTP/2 200 OK"
+2026-04-29 00:55:44,756 - httpx - INFO - HTTP Request: POST https://aejsfehbstjobvmcqpxd.supabase.co/rest/v1/customers "HTTP/2 400 Bad Request"

@@ -81,6 +81,11 @@ def process_deposit(db_service, customer_id: str, amount_str) -> tuple:
     if not is_valid:
         return False, "Invalid deposit amount. Please enter a positive number."
 
+    # Verify account status before allowing transactions
+    customer = db_service.verify_customer(customer_id)
+    if not customer or customer.get("status") != "active":
+        return False, "Account is pending verification or suspended. Transactions blocked."
+
     success = db_service.update_balance(customer_id, amount, "Deposit")
     if success:
         return True, "Funds deposited successfully."
@@ -110,6 +115,11 @@ def process_withdrawal(db_service, customer_id: str, amount_str, current_balance
     is_valid, amount = validate_amount(amount_str)
     if not is_valid:
         return False, "Invalid withdrawal amount. Please enter a positive number."
+
+    # Verify account status before allowing transactions
+    customer = db_service.verify_customer(customer_id)
+    if not customer or customer.get("status") != "active":
+        return False, "Account is pending verification or suspended. Transactions blocked."
 
     # Step 2: Overdraft check — enforce no-negative-balance rule
     if amount > current_balance:
@@ -151,6 +161,11 @@ def process_transfer(db_service, sender_id: str, recipient_id: str, amount_str) 
     is_valid, amount = validate_amount(amount_str)
     if not is_valid:
         return False, "Invalid transfer amount. Please enter a positive number."
+
+    # Verify sender account status before allowing transactions
+    sender = db_service.verify_customer(sender_id)
+    if not sender or sender.get("status") != "active":
+        return False, "Your account is pending verification or suspended. Transactions blocked."
 
     # Step 3: Verify the recipient account exists in the database
     recipient = db_service.search_customer(recipient_id)
